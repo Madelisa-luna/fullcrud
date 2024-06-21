@@ -1,283 +1,403 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Form1 = () => {
+
+  const [nombre, setNombre] = useState('');
+  const [apaterno, setApaterno] = useState('');
+  const [amaterno, setAmaterno] = useState('');
+  const [fnac, setFnac] = useState('');
+  const [edocivil, setEdocivil] = useState('Soltero');
+  const [hijos, setHijos] = useState(0);
+
+
   return (
     <>
       <nav className="main-header navbar navbar-expand-md navbar-light navbar-white">
-    <div className="container">
-      <a href="../../index3.html" className="navbar-brand">
-        <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" 
-        className="brand-image img-circle elevation-3" />
-        <span className="brand-text font-weight-light">AdminLTE 3</span>
-      </a>
+        <div className="container">
+          <a href="../../index3.html" className="navbar-brand">
+            <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+              className="brand-image img-circle elevation-3" />
+            <span className="brand-text font-weight-light">AdminLTE 3</span>
+          </a>
 
-      <button className="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
+          <button className="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
 
-      <div className="collapse navbar-collapse order-3" id="navbarCollapse">
-        {/*Inicio de la barra de busqueda*/}
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <a href="index3.html" className="nav-link">Home</a>
-          </li>
-          <li className="nav-item">
-            <a href="#" className="nav-link">Contact</a>
-          </li>
-          <li className="nav-item dropdown">
-            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" className="nav-link dropdown-toggle">Dropdown</a>
-            <ul aria-labelledby="dropdownSubMenu1" className="dropdown-menu border-0 shadow">
-              <li><a href="#" className="dropdown-item">Some action </a></li>
-              <li><a href="#" className="dropdown-item">Some other action</a></li>
+          <div className="collapse navbar-collapse order-3" id="navbarCollapse">
+            {/*Inicio de la barra de busqueda*/}
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <a href="index3.html" className="nav-link">Home</a>
+              </li>
+              <li className="nav-item">
+                <a href="#" className="nav-link">Contact</a>
+              </li>
+              <li className="nav-item dropdown">
+                <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" className="nav-link dropdown-toggle">Dropdown</a>
+                <ul aria-labelledby="dropdownSubMenu1" className="dropdown-menu border-0 shadow">
+                  <li><a href="#" className="dropdown-item">Some action </a></li>
+                  <li><a href="#" className="dropdown-item">Some other action</a></li>
 
-              <li className="dropdown-divider"></li>
+                  <li className="dropdown-divider"></li>
 
-              {/*<!-- Level two dropdown-->*/}
-              <li className="dropdown-submenu dropdown-hover">
-                <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" className="dropdown-item dropdown-toggle">Hover for action</a>
-                <ul aria-labelledby="dropdownSubMenu2" className="dropdown-menu border-0 shadow">
-                  <li>
-                    <a tabindex="-1" href="#" className="dropdown-item">level 2</a>
-                  </li>
+                  {/*<!-- Level two dropdown-->*/}
+                  <li className="dropdown-submenu dropdown-hover">
+                    <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" className="dropdown-item dropdown-toggle">Hover for action</a>
+                    <ul aria-labelledby="dropdownSubMenu2" className="dropdown-menu border-0 shadow">
+                      <li>
+                        <a tabindex="-1" href="#" className="dropdown-item">level 2</a>
+                      </li>
 
-                  {/*Level three dropdown*/}
-                  <li className="dropdown-submenu">
-                    <a id="dropdownSubMenu3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" className="dropdown-item dropdown-toggle">level 2</a>
-                    <ul aria-labelledby="dropdownSubMenu3" className="dropdown-menu border-0 shadow">
-                      <li><a href="#" className="dropdown-item">3rd level</a></li>
-                      <li><a href="#" className="dropdown-item">3rd level</a></li>
+                      {/*Level three dropdown*/}
+                      <li className="dropdown-submenu">
+                        <a id="dropdownSubMenu3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" className="dropdown-item dropdown-toggle">level 2</a>
+                        <ul aria-labelledby="dropdownSubMenu3" className="dropdown-menu border-0 shadow">
+                          <li><a href="#" className="dropdown-item">3rd level</a></li>
+                          <li><a href="#" className="dropdown-item">3rd level</a></li>
+                        </ul>
+                      </li>
+                      {/*<!-- End Level three -->*/}
+
+                      <li><a href="#" className="dropdown-item">level 2</a></li>
+                      <li><a href="#" className="dropdown-item">level 2</a></li>
                     </ul>
                   </li>
-                  {/*<!-- End Level three -->*/}
-
-                  <li><a href="#" className="dropdown-item">level 2</a></li>
-                  <li><a href="#" className="dropdown-item">level 2</a></li>
+                  {/* <!-- End Level two -->*/}
                 </ul>
               </li>
-             {/* <!-- End Level two -->*/}
             </ul>
-          </li>
-        </ul>
 
-        {/*<!-- SEARCH FORM -->*/}
-        <form className="form-inline ml-0 ml-md-3">
-          <div className="input-group input-group-sm">
-            <input className="form-control form-control-navbar" 
-            type="search" placeholder="Search" aria-label="Search"/>
-            <div className="input-group-append">
-              <button className="btn btn-navbar" type="submit">
-                <i className="fas fa-search"></i>
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-
-      {/*<!-- Right navbar links -->*/}
-      <ul className="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
-        {/*<!-- Messages Dropdown Menu -->*/}
-        <li className="nav-item dropdown">
-          <a className="nav-link" data-toggle="dropdown" href="#">
-            <i className="fas fa-comments"></i>
-            <span className="badge badge-danger navbar-badge">3</span>
-          </a>
-          <div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-            <a href="#" className="dropdown-item">
-              {/*<!-- Message Start -->*/}
-              <div className="media">
-                <img src="../../dist/img/user1-128x128.jpg" alt="User Avatar" 
-                className="img-size-50 mr-3 img-circle"/>
-                <div className="media-body">
-                  <h3 className="dropdown-item-title">
-                    Brad Diesel
-                    <span className="float-right text-sm text-danger"><i className="fas fa-star"></i></span>
-                  </h3>
-                  <p className="text-sm">Call me whenever you can...</p>
-                  <p className="text-sm text-muted"><i className="far fa-clock mr-1"></i> 4 Hours Ago</p>
+            {/*<!-- SEARCH FORM -->*/}
+            <form className="form-inline ml-0 ml-md-3">
+              <div className="input-group input-group-sm">
+                <input className="form-control form-control-navbar"
+                  type="search" placeholder="Search" aria-label="Search" />
+                <div className="input-group-append">
+                  <button className="btn btn-navbar" type="submit">
+                    <i className="fas fa-search"></i>
+                  </button>
                 </div>
               </div>
-              {/*<!-- Message End -->*/}
-            </a>
-            <div className="dropdown-divider"></div>
-
-            <a href="#" className="dropdown-item">
-              {/*<!-- Message Start -->*/}
-              <div className="media">
-                <img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" 
-                className="img-size-50 img-circle mr-3"/>
-                <div className="media-body">
-                  <h3 className="dropdown-item-title">
-                    John Pierce
-                    <span className="float-right text-sm text-muted"><i className="fas fa-star"></i></span>
-                  </h3>
-                  <p className="text-sm">I got your message bro</p>
-                  <p className="text-sm text-muted"><i className="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                </div>
-              </div>
-              {/*<!-- Message End -->*/}
-            </a>
-            <div className="dropdown-divider"></div>
-            <a href="#" className="dropdown-item">
-              {/*<!-- Message Start -->*/}
-              <div className="media">
-                <img src="../../dist/img/user3-128x128.jpg" alt="User Avatar" 
-                className="img-size-50 img-circle mr-3"/>
-                <div className="media-body">
-                  <h3 className="dropdown-item-title">
-                    Nora Silvester
-                    <span className="float-right text-sm text-warning"><i className="fas fa-star"></i></span>
-                  </h3>
-                  <p className="text-sm">The subject goes here</p>
-                  <p className="text-sm text-muted"><i className="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                </div>
-              </div>
-              {/*<!-- Message End -->*/}
-            </a>
-            <div className="dropdown-divider"></div>
-            <a href="#" className="dropdown-item dropdown-footer">See All Messages</a>
+            </form>
           </div>
-        </li>
-        {/*<!-- Notifications Dropdown Menu -->*/}
-        <li className="nav-item dropdown">
-          <a className="nav-link" data-toggle="dropdown" href="#">
-            <i className="far fa-bell"></i>
-            <span className="badge badge-warning navbar-badge">15</span>
-          </a>
-          <div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-            <span className="dropdown-header">15 Notifications</span>
-            <div className="dropdown-divider"></div>
-            <a href="#" className="dropdown-item">
-              <i className="fas fa-envelope mr-2"></i> 4 new messages
-              <span className="float-right text-muted text-sm">3 mins</span>
-            </a>
-            <div className="dropdown-divider"></div>
-            <a href="#" className="dropdown-item">
-              <i className="fas fa-users mr-2"></i> 8 friend requests
-              <span className="float-right text-muted text-sm">12 hours</span>
-            </a>
-            <div className="dropdown-divider"></div>
-            <a href="#" className="dropdown-item">
-              <i className="fas fa-file mr-2"></i> 3 new reports
-              <span className="float-right text-muted text-sm">2 days</span>
-            </a>
-            <div className="dropdown-divider"></div>
-            <a href="#" className="dropdown-item dropdown-footer">See All Notifications</a>
-          </div>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-            <i className="fas fa-th-large"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  {/*<!-- /.navbar -->*/}
 
- {/* <!-- Content Wrapper. Contains page content -->*/}
-  <div className="content-wrapper">
-    {/*<!-- Content Header (Page header) -->*/}
-    <div className="content-header">
-      <div className="container">
-        <div className="row mb-2">
-          <div className="col-sm-6">
-            <h1 className="m-0"> Top Navigation <small>Example 3.0</small></h1>
-          </div>{/*<!-- /.col -->*/}
-          <div className="col-sm-6">
-            <ol className="breadcrumb float-sm-right">
-              <li className="breadcrumb-item"><a href="#">Home</a></li>
-              <li className="breadcrumb-item"><a href="#">Layout</a></li>
-              <li className="breadcrumb-item active">Top Navigation</li>
-            </ol>
-          </div>{/*<!-- /.col -->*/}
-        </div>{/*<!-- /.row -->*/}
-      </div>{/*<!-- /.container-fluid -->*/}
-    </div>
-    {/*<!-- /.content-header -->*/}
+          {/*<!-- Right navbar links -->*/}
+          <ul className="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
+            {/*<!-- Messages Dropdown Menu -->*/}
+            <li className="nav-item dropdown">
+              <a className="nav-link" data-toggle="dropdown" href="#">
+                <i className="fas fa-comments"></i>
+                <span className="badge badge-danger navbar-badge">3</span>
+              </a>
+              <div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <a href="#" className="dropdown-item">
+                  {/*<!-- Message Start -->*/}
+                  <div className="media">
+                    <img src="../../dist/img/user1-128x128.jpg" alt="User Avatar"
+                      className="img-size-50 mr-3 img-circle" />
+                    <div className="media-body">
+                      <h3 className="dropdown-item-title">
+                        Brad Diesel
+                        <span className="float-right text-sm text-danger"><i className="fas fa-star"></i></span>
+                      </h3>
+                      <p className="text-sm">Call me whenever you can...</p>
+                      <p className="text-sm text-muted"><i className="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                    </div>
+                  </div>
+                  {/*<!-- Message End -->*/}
+                </a>
+                <div className="dropdown-divider"></div>
 
-    {/*<!-- Main content -->*/}
-    <div className="content">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-6">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-
-                <p className="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's
-                  content.
-                </p>
-
-                <a href="#" className="card-link">Card link</a>
-                <a href="#" className="card-link">Another link</a>
+                <a href="#" className="dropdown-item">
+                  {/*<!-- Message Start -->*/}
+                  <div className="media">
+                    <img src="../../dist/img/user8-128x128.jpg" alt="User Avatar"
+                      className="img-size-50 img-circle mr-3" />
+                    <div className="media-body">
+                      <h3 className="dropdown-item-title">
+                        John Pierce
+                        <span className="float-right text-sm text-muted"><i className="fas fa-star"></i></span>
+                      </h3>
+                      <p className="text-sm">I got your message bro</p>
+                      <p className="text-sm text-muted"><i className="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                    </div>
+                  </div>
+                  {/*<!-- Message End -->*/}
+                </a>
+                <div className="dropdown-divider"></div>
+                <a href="#" className="dropdown-item">
+                  {/*<!-- Message Start -->*/}
+                  <div className="media">
+                    <img src="../../dist/img/user3-128x128.jpg" alt="User Avatar"
+                      className="img-size-50 img-circle mr-3" />
+                    <div className="media-body">
+                      <h3 className="dropdown-item-title">
+                        Nora Silvester
+                        <span className="float-right text-sm text-warning"><i className="fas fa-star"></i></span>
+                      </h3>
+                      <p className="text-sm">The subject goes here</p>
+                      <p className="text-sm text-muted"><i className="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                    </div>
+                  </div>
+                  {/*<!-- Message End -->*/}
+                </a>
+                <div className="dropdown-divider"></div>
+                <a href="#" className="dropdown-item dropdown-footer">See All Messages</a>
               </div>
-            </div>
-
-            <div className="card card-primary card-outline">
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-
-                <p className="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's
-                  content.
-                </p>
-                <a href="#" className="card-link">Card link</a>
-                <a href="#" className="card-link">Another link</a>
+            </li>
+            {/*<!-- Notifications Dropdown Menu -->*/}
+            <li className="nav-item dropdown">
+              <a className="nav-link" data-toggle="dropdown" href="#">
+                <i className="far fa-bell"></i>
+                <span className="badge badge-warning navbar-badge">15</span>
+              </a>
+              <div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <span className="dropdown-header">15 Notifications</span>
+                <div className="dropdown-divider"></div>
+                <a href="#" className="dropdown-item">
+                  <i className="fas fa-envelope mr-2"></i> 4 new messages
+                  <span className="float-right text-muted text-sm">3 mins</span>
+                </a>
+                <div className="dropdown-divider"></div>
+                <a href="#" className="dropdown-item">
+                  <i className="fas fa-users mr-2"></i> 8 friend requests
+                  <span className="float-right text-muted text-sm">12 hours</span>
+                </a>
+                <div className="dropdown-divider"></div>
+                <a href="#" className="dropdown-item">
+                  <i className="fas fa-file mr-2"></i> 3 new reports
+                  <span className="float-right text-muted text-sm">2 days</span>
+                </a>
+                <div className="dropdown-divider"></div>
+                <a href="#" className="dropdown-item dropdown-footer">See All Notifications</a>
               </div>
-            </div>{/*<!-- /.card -->*/}
-          </div>
-          {/*<!-- /.col-md-6 -->*/}
-          <div className="col-lg-6">
-            <div className="card">
-              <div className="card-header">
-                <h5 className="card-title m-0">Featured</h5>
-              </div>
-              <div className="card-body">
-                <h6 className="card-title">Special title treatment</h6>
-
-                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-
-            <div className="card card-primary card-outline">
-              <div className="card-header">
-                <h5 className="card-title m-0">Featured</h5>
-              </div>
-              <div className="card-body">
-                <h6 className="card-title">Special title treatment</h6>
-
-                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          {/*<!-- /.col-md-6 -->*/}
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+                <i className="fas fa-th-large"></i>
+              </a>
+            </li>
+          </ul>
         </div>
-        {/*<!-- /.row -->*/}
-      </div>{/*<!-- /.container-fluid -->*/}
-    </div>
-    {/*<!-- /.content -->*/}
-  </div>
-  {/*<!-- /.content-wrapper -->*/}
+      </nav>
+      {/*<!-- /.navbar -->*/}
 
-  {/*<!-- Control Sidebar -->*/}
-  <aside className="control-sidebar control-sidebar-dark">
-    {/*<!-- Control sidebar content goes here -->*/}
-  </aside>
-  {/*<!-- /.control-sidebar -->*/}
+      {/* <!-- Content Wrapper. Contains page content -->*/}
+      <div className="content-wrapper">
+        {/*<!-- Content Header (Page header) -->*/}
+        <div className="content-header">
+          <div className="container">
+            <div className="row mb-2">
+              <div className="col-sm-6">
+                <h1 className="m-0"> Top Navigation <small>Example 3.0</small></h1>
+              </div>{/*<!-- /.col -->*/}
+              <div className="col-sm-6">
+                <ol className="breadcrumb float-sm-right">
+                  <li className="breadcrumb-item"><a href="#">Home</a></li>
+                  <li className="breadcrumb-item"><a href="#">Layout</a></li>
+                  <li className="breadcrumb-item active">Top Navigation</li>
+                </ol>
+              </div>{/*<!-- /.col -->*/}
+            </div>{/*<!-- /.row -->*/}
+          </div>{/*<!-- /.container-fluid -->*/}
+        </div>
+        {/*<!-- /.content-header -->*/}
 
-  {/*<!-- Main Footer -->*/}
-  <footer className="main-footer">
-    {/**/}
-    <div className="float-right d-none d-sm-inline">
-      Anything you want
-    </div>
-    {/*<!-- Default to the left -->*/}
-    <strong>Copyright &copy; 2014-2021 
-        <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-  </footer>
+        {/*<!-- Main content -->*/}
+        <div className="content">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-6">
+                <div className="card card-primary card-outline">
+
+                  <div className="card-header">
+                    <h5 className="card-title">Card title</h5>
+                  </div>
+
+                  <div className="card-body">
+                    <div className="form-group">
+                      <label>Nombre(s)</label>
+                      <input type="text" className="form-control" placeholder="Enter name"
+                        value={nombre} onChange={e => setNombre(e.target.value)} />
+
+                      <label>Apellido Paterno</label>
+                      <input type="text" className="form-control" placeholder="Apellido Paterno" />
+
+                      <label>Apellido Marteno</label>
+                      <input type="text" className="form-control" placeholder="Apellido Materno" />
+
+                      <label>Fecha de nacimiento</label>
+                      <input type="text" className="form-control" placeholder="Fecha de nacimiento" />
+
+                      <div className='form-group'>
+                        <label htmlFor="">Estado Civil ({edocivil}) </label>
+                        <div className="form-check">
+
+                          {/*Se agrega nombre, valor, asignacion estricta y el evento
+                          onchange para que solo se pueda seleccionar una opcion */}
+                          <input type="radio" className="form-check-input"
+                            name="Soltero" value="Soltero"
+                            checked={edocivil === "Soltero"}
+                            onChange={e => setEdocivil(e.target.value)} />
+                          <label htmlFor="">Soltero(a)</label>
+                        </div>
+
+                        <div className="form-check">
+                          <input type="radio" className="form-check-input"
+                            name="Casado" value="Casado"
+                            checked={edocivil === "Casado"}
+                            onChange={e => setEdocivil(e.target.value)} />
+                          <label htmlFor="">Casado(a)</label>
+                        </div>
+
+                        <div className="form-check">
+                          <input type="radio" className="form-check-input"
+                            name="Divorciado" value="Divorciado"
+                            checked={edocivil === "Divorciado"}
+                            onChange={e => setEdocivil(e.target.value)} />
+                          <label htmlFor="">Divorciado(a)</label>
+                        </div>
+                        <div className="form-check">
+                          <input type="radio" className="form-check-input"
+                            name="Otro" value="Otro"
+                            checked={edocivil === "Otro"}
+                            onChange={e => setEdocivil(e.target.value)} />
+                          <label htmlFor="">Otro</label>
+                        </div>
+                        {
+                          edocivil == "Otro" && (
+                            <div className="form-group">
+                              <label>¿Cual?</label>
+                              <input type="text" className="form-control" placeholder="¿Cual?" />
+                            </div>
+                          )
+                        }
+                      </div>
+                      {/*Fin de form-group*/}
+
+                      <div className='form-group'>
+                        <label htmlFor="">¿Tiene hijos?</label>
+                        <div>
+                          <div className="form-check">
+                            <input type="radio" className="form-check-input"
+                              name="Si" value="Si"
+                              checked={hijos === "Si"}
+                              onChange={e => setHijos(e.target.value)} />
+                            <label htmlFor="">Si</label>
+                          </div>
+                          <div className="form-check">
+                            <input type="radio" className="form-check-input"
+                              name="No" value="No"
+                              checked={hijos === "No"}
+                              onChange={e => setHijos(e.target.value)} />
+                            <label htmlFor="">No</label>
+                          </div>
+                          {
+                            hijos == "Si" && (
+                              <div className="form-group">
+                                <label htmlFor="">No. de hijos</label>
+                                <input type="number" className="form-control" placeholder="No. de hijos" />
+                              </div>
+                            )
+                          }
+                        </div>{/*fin de div*/}
+                      </div>
+                    </div> {/*fin de form*/}
+                  </div> {/*fin de card-body*/}
+                </div> {/*fin de card*/}
+
+                <div className="card card-primary card-outline">
+                  <div className="card-body">
+                    <h5 className="card-title">Card title</h5>
+
+                    <p className="card-text">
+                      Some quick example text to build on the card title and make up the bulk of the card's
+                      content.
+                    </p>
+                    <a href="#" className="card-link">Card link</a>
+                    <a href="#" className="card-link">Another link</a>
+                  </div>
+                </div>{/*<!-- /.card -->*/}
+              </div>
+
+              {/*<!-- /.col-md-6 -->*/}
+              <div className="col-lg-6">
+                <div className="card">
+                  <div className="card-header">
+                    <h5 className="card-title m-0">Featured</h5>
+                  </div>
+                  <div className="card-body">
+                    <h6 className="card-title">Special title treatment</h6>
+
+                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <button className='btn btn-primary' data-toggle="modal"
+                      data-target="#modal-info">Go somewhere</button>
+                  </div>
+                </div>
+
+                <div className="card card-primary card-outline">
+                  <div className="card-header">
+                    <h5 className="card-title m-0">Featured</h5>
+                  </div>
+                  <div className="card-body">
+                    <h6 className="card-title">Special title treatment</h6>
+
+                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </div>
+              {/*<!-- /.col-md-6 -->*/}
+
+              {/*Inicio de ventana modal*/}
+              <div className="modal fade show" id="modal-info" style={{ display: "None" }}
+                aria-modal="true" >
+                <div className="modal-dialog">
+                  <div className="modal-content bg-info">
+                    <div className="modal-header">
+                      <h4 className="modal-title">Info Modal</h4>
+                      <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                    </div>
+                    <div className="modal-body">
+                      <p>One fine body…</p>
+                    </div>
+                    <div className="modal-footer justify-content-between">
+                      <button type="button" className="btn btn-outline-light" data-dismiss="modal">Close</button>
+                      <button type="button" className="btn btn-outline-light">Save changes</button>
+                    </div>
+                  </div>
+                  {/* /.modal-content */}
+                </div>
+                {/* /.modal-dialog */}
+
+              </div>
+            </div>
+            {/*<!-- /.row -->*/}
+          </div>{/*<!-- /.container-fluid -->*/}
+        </div>
+        {/*<!-- /.content -->*/}
+      </div>
+      {/*<!-- /.content-wrapper -->*/}
+
+      {/*<!-- Control Sidebar -->*/}
+      <aside className="control-sidebar control-sidebar-dark">
+        {/*<!-- Control sidebar content goes here -->*/}
+      </aside>
+      {/*<!-- /.control-sidebar -->*/}
+
+      {/*<!-- Main Footer -->*/}
+      <footer className="main-footer">
+        {/**/}
+        <div className="float-right d-none d-sm-inline">
+          Anything you want
+        </div>
+        {/*<!-- Default to the left -->*/}
+        <strong>Copyright &copy; 2014-2021
+          <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+      </footer>
     </>
   )
 }
